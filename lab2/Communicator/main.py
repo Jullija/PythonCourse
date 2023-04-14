@@ -130,6 +130,7 @@ def speechToText():
         text = r.recognize_google(audio, language='pl_PL')
         send(PUBLICATION_TOPIC, text)
         addMessageOnCanvas(text,"w",True,myName)
+        speakNow(text, myName)
     except sr.UnknownValueError:
         print('nie rozumiem')
     except sr.RequestError as e:
