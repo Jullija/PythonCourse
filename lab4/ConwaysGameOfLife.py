@@ -51,15 +51,15 @@ while True:
             exit()
 
     
-    [pygame.draw.line(surface, pygame.Color('darkslategray'), (x, 0), (x,HEIGHT)) for x in range (0, WIDTH, CELL)]
-    [pygame.draw.line(surface, pygame.Color('darkslategray'), (0, y), (WIDTH,y)) for y in range (0, HEIGHT, CELL)]
+    [pygame.draw.line(surface, pygame.Color('pink'), (x, 0), (x,HEIGHT)) for x in range (0, WIDTH, CELL)]
+    [pygame.draw.line(surface, pygame.Color('pink'), (0, y), (WIDTH,y)) for y in range (0, HEIGHT, CELL)]
 
     threads = [] 
 
     for x in range (1, W-1):
         for y in range (1, H-1):
             if foreground[y][x]:
-                pygame.draw.rect(surface, pygame.Color('forestgreen'), (x * CELL + 2, y * CELL + 2, CELL - 2, CELL - 2))
+                pygame.draw.rect(surface, pygame.Color('violet'), (x * CELL + 2, y * CELL + 2, CELL - 2, CELL - 2))
             
             #thread
             t = threading.Thread(target=checkCell, args=[foreground, background, x, y])
